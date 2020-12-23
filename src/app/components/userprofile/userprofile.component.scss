@@ -1,0 +1,40 @@
+.profile-photo {
+  border-radius: 50%;
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.info-square {
+  text-align: center;
+}
+
+ion-segment-button {
+  margin-bottom: 1px;
+  &.segment-button-checked {
+    --indicator-color: black;
+    background-color: #fff;
+    color: black;
+  }
+}
+
+.image-grid {
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+
+  &:nth-child(3n) {
+    border-right: none;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
