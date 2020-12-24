@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { UserService } from "src/app/services/user/user.service";
 import { UtilityService } from "src/app/services/utility/utility.service";
+import * as moment from "moment";
 
 @Component({
   selector: "app-userprofile",
@@ -16,6 +17,7 @@ export class UserprofileComponent {
   page = 1;
   result = 25;
   profilePost: any = [];
+  dob: any;
 
   ionViewWillEnter() {
     this.getProfilePosts();
@@ -27,6 +29,9 @@ export class UserprofileComponent {
       (data) => {
         this.utilityService.dismissLoader();
         this.profilePost = data["results"];
+        this.dob = moment(new Date(this.profilePost[0]?.dob.date)).format(
+          "Do MMM"
+        );
       },
       (err) => {
         this.utilityService.dismissLoader();

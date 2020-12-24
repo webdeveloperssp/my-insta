@@ -1,6 +1,6 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>capt</ion-title>
+    <ion-title>{{ profilePost[0]?.login.username }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,10 +8,7 @@
   <ion-grid>
     <ion-row>
       <ion-col size="3">
-        <img
-          class="profile-photo"
-          src="https://res.cloudinary.com/og-tech/image/upload/s--Ivs1sp-J--/c_scale,w_100/v1529311900/og_icon.jpg"
-        />
+        <img class="profile-photo" [src]="profilePost[0]?.picture.large" />
       </ion-col>
       <ion-col size="9">
         <div class="profile-info">
@@ -44,9 +41,16 @@
     </ion-row>
   </ion-grid>
 
-  <div class="ion-padding-horizontal">
-    <p class="ion-no-margin"><strong>Oreoluwa Ogundipe</strong></p>
+  <div class="ion-padding-horizontal bio-info">
+    <p>
+      <strong
+        >{{ profilePost[0]?.name.first }}
+        {{ profilePost[0]?.name.last }}</strong
+      >
+      ({{ profilePost[0]?.location.country }})
+    </p>
     <p>Software Engineer</p>
+    <p>Wish me on {{ dob }}</p>
   </div>
 
   <ion-segment [(ngModel)]="segmentOption" mode="md">

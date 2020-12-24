@@ -35,7 +35,7 @@ export class UtilityService {
   async presentToast(msg, color?) {
     const toast = await this.toastController.create({
       message: msg,
-      duration: 3000,
+      duration: 2000,
       color: color,
       mode: "ios",
     });

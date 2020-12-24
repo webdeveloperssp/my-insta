@@ -65,6 +65,7 @@
             [hidden]="!loaded"
           />
           <ion-spinner
+            name="lines"
             [ngClass]="{ center: true }"
             *ngIf="!loaded"
           ></ion-spinner>
@@ -98,19 +99,17 @@
           <img [src]="feeds.picture.large" />
         </ion-avatar>
         <strong class="user-name">{{ feeds.name.first }} </strong>
-        <span class="feed-text"> lorem ipsum</span>
-        <!-- <span class="grey-text"> more</span> -->
+        <span> lorem ipsum</span>
       </p>
       <p class="all-comments">
         <span class="grey-text">View All Comments</span>
       </p>
-      <p class="post-time"><span class="grey-text">feed.time</span></p>
     </ion-card-content>
   </ion-card>
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreFeeds($event)">
     <ion-infinite-scroll-content
-      loadingSpinner="bubbles"
-      loadingText="Loading..."
+      loadingSpinner="lines"
+      loadingText="Loading Feeds..."
     >
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
